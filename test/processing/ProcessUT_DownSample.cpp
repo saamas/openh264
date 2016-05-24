@@ -280,6 +280,8 @@ TEST (DownSampleTest, func) { \
     if (0 == (m_uiCpuFeatureFlag & CPUFLAGS)) \
     return; \
   } \
+  if (CPUFLAGS == WELS_CPU_AVX2) \
+    puts ("WELS_CPU_AVX2"); \
   ENFORCE_STACK_ALIGN_1D (uint8_t, dst_c, 70000, 16); \
   ENFORCE_STACK_ALIGN_1D (uint8_t, src_c, 70000, 16); \
   int dst_stride_c; \
